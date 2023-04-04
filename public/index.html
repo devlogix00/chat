@@ -23,7 +23,7 @@
   <meta name="msapplication-tap-highlight" content="no">
 
   <!-- Web Application Manifest -->
-  <link rel="manifest" href="manifest.json">
+  <!-- <link rel="manifest" href="manifest.json"> -->
 
   <!-- Add to homescreen for Chrome on Android -->
   <meta name="mobile-web-app-capable" content="yes">
@@ -99,7 +99,7 @@
           </form>
         </div>
         <div>
-            <a href="http://localhost:8080/src/host/index.html">Close Chat</a>
+            <a href="http://polar-scrubland-06961.herokuapp.com/src/host/index.html">Close Chat</a>
         </div>
       </div>
 
@@ -471,7 +471,7 @@
             const formData = new FormData();
             formData.append("file", file);
             console.log(formData);
-            fetch("http://localhost:8082/upload_files", {
+            fetch("https://bookme-e703b.web.app/fileUpload", {
                 method: 'POST',
                 body: formData
             })
@@ -527,7 +527,7 @@
     authStateObserver(getAuth().currentUser);
 
     document.getElementById('bookme').addEventListener('click', function(){
-        window.location = 'http://localhost:8080/src/host/index.html';
+        window.location = 'https://polar-scrubland-06961.herokuapp.com/src/host/index.html';
     });
 
       </script>

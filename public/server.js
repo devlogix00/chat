@@ -14,7 +14,7 @@ const {  getDatabase,  onValue, set, remove} = require('firebase/database');
 const fs = require('firebase-admin');
 const { addDoc, collection, getFirestore, Timestamp, fromDate, orderBy, limit, onSnapshot, query, serverTimestamp, setDoc } = require('firebase/firestore');
 const { ref, getStorage, uploadBytesResumable, getDownloadURL, uploadBytes, put } = require('firebase/storage');
-const serviceAccount = '/Users/maamenyarko/Desktop/test/bookme-e703b-firebase-adminsdk-9o2ea-483c8c300a.json';
+const serviceAccount = 'bookme-e703b-firebase-adminsdk-9o2ea-483c8c300a.json';
 
 app.use(express.static(__dirname));
 
@@ -63,7 +63,7 @@ databaseRef.on('value', (snapshot) => {
         }
     } else if(data.imageUrl != null) {
         try{
-              app.post("/upload_files", upload.single('file'), 
+              app.post("/fileUpload", upload.single('file'), 
                 function uploadFiles(req, res){
                     
                     console.log(req.body);
@@ -148,7 +148,7 @@ app.get('/', function(req, res){
 
 app.post('/', (req,res) => {
     app.use(cors({
-        'Allow-Access-Control-Origin': ['http://localhost:'+port, 'https://bookme-e703b.firebaseapp.com/']
+        'Allow-Access-Control-Origin': ['http://localhost:'+port, 'https://bookme-e703b.firebaseapp.com/', 'https://bookme-e703b.web.app/']
     }));
 });
 
